@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="color_main">#FFFFFFFF</color>
+    <color name="color_ripple">#994D4D4D</color>
+    <color name="color_bg">#E9E9E9</color>
+    <color name="color_icon">#1D192B</color>
+    <color name="color_red_login">#FFE30012</color>
+
+    <color name="color_status_normal">#77dd77</color>
+    <color name="color_status_warning">#FFCC00</color>
+    <color name="color_status_dangerous">#F32013</color>
+</resources>

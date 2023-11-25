@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Fire Alert</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="first_fragment">First fragment</string>
+    <string name="second_fragment">Second fragment</string>
+    <string name="third_fragment">Third fragment</string>
+    <string name="base_header_title">Base title</string>
+    <string name="back_to_first">Back to first</string>
+    <string name="go_to_third">Go to third</string>
+    <string name="go_to_second">Go to second</string>
+    <string name="back_to_second">Back to second</string>
+    <string name="fire_alert">Fire Alert</string>
+    <string name="chart">Chart</string>
+    <string name="log">Log</string>
+    <string name="setting">Setting</string>
+    <string name="logout">Logout</string>
+    <string name="update">Update</string>
+    <string name="location">Location</string>
+    <string name="your_phone_number">Your phone number</string>
+    <string name="firefighter_s_phone_number">Firefighter\'s phone number</string>
+    <string name="save_changes">Save changes</string>
+    <string name="function">Function</string>
+    <string name="pump">Pump</string>
+    <string name="call_firefighters">Call Firefighters</string>
+    <string name="notification">Notification</string>
+    <string name="fire_prediction">Fire Prediction</string>
+    <string name="sound">Sound</string>
+    <string name="vibration">Vibration</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="login">Login</string>
+    <string name="user_name">Username</string>
+    <string name="temperature">Temperature (oC)</string>
+    <string name="gas">Gas</string>
+    <string name="status">Status</string>
+    <string name="_0_0">0.0</string>
+    <string name="normal">Normal</string>
+</resources>

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "949265055782",
+    "firebase_url": "https://btl-iot-dbcbe-default-rtdb.firebaseio.com",
+    "project_id": "btl-iot-dbcbe",
+    "storage_bucket": "btl-iot-dbcbe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949265055782:android:0e78cf4d0dd4461d03e6e7",
+        "android_client_info": {
+          "package_name": "com.example.btliot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyyNMjmKpfFqcHdk9uMH1dv0mQ18Pis-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
