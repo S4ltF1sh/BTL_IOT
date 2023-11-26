@@ -23,24 +23,34 @@
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_auto_air_conditioner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/auto_air_conditioner"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/sw_fire_alert"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/fire_alert"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:visibility="gone"/>
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/sw_pump"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/pump"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:visibility="gone"/>
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/sw_call_firefighter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/call_firefighters"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:visibility="gone"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

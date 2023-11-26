@@ -1,5 +1,7 @@
 package com.example.btliot.view.home.chart
 
+import android.view.MotionEvent
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModel
@@ -12,6 +14,7 @@ import com.example.btliot.database.AppDatabase
 import com.example.btliot.databinding.FragmentChartBinding
 import com.example.btliot.model.LogData
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 
 class ChartViewModel(
@@ -31,14 +34,14 @@ class ChartViewModel(
     }
 
     fun start() {
-        viewModelScope.launch(Dispatchers.Default) {
+        viewModelScope.launch(Dispatchers.IO) {
             chartRepository?.start(
                 updateDataListener = object : ChartRepository.UpdateDataListener {
                     override fun onUpdateTemperature(temperature: Float) {
                         onUpdateTemperatureHandler(temperature)
                     }
 
-                    override fun onUpdateGasRate(gasRate: Int) {
+                    override fun onUpdateGasRate(gasRate: Float) {
                         onUpdateGasRateHandler(gasRate)
                     }
 
@@ -66,7 +69,7 @@ class ChartViewModel(
         }
     }
 
-    private fun onUpdateGasRateHandler(gasRate: Int) {
+    private fun onUpdateGasRateHandler(gasRate: Float) {
         viewModelScope.launch(Dispatchers.IO) {
             database.logDao().insert(
                 LogData(
@@ -103,6 +106,47 @@ class ChartViewModel(
         }
     }
 
+    fun setSwitchActions(binding: FragmentChartBinding) {
+        binding.apply {
+            swAirConditioner.setOnCheckedChangeListener { _, isChecked ->
+                if (chartRepository?.isAutoAirConditioner?.value == true) {
+                    swAirConditioner.isChecked = isChecked.not()
+                    MainScope().launch {
+                        Toast.makeText(
+                            MyApp.context(),
+                            "Pls turn off auto mode",
+                            Toast.LENGTH_SHORT
+                        )
+                            .show()
+                    }
+                } else {
+                    chartRepository?.setAirConditionerStatus(isChecked)
+                }
+            }
+        }
+    }
+
+    fun setOpenMicAction(
+        binding: FragmentChartBinding,
+        onMicClickHandler: (isStop: Boolean) -> Unit
+    ) {
+        binding.apply {
+            cvMic.setOnTouchListener { view, motionEvent ->
+                if (motionEvent.action == MotionEvent.ACTION_DOWN) {
+                    onMicClickHandler(true)
+                    true
+                } else if (motionEvent.action == MotionEvent.ACTION_UP) {
+                    onMicClickHandler(false)
+                    true
+                } else {
+                    false
+                }
+                true
+            }
+        }
+
+    }
+
     suspend fun observeData(binding: FragmentChartBinding, lifecycleOwner: LifecycleOwner) {
         chartRepository?.temperatureRecord?.observe(lifecycleOwner) {
             binding.tvTemperature.text = it.toString()
@@ -136,6 +180,14 @@ class ChartViewModel(
             binding.cvStatus.setCardBackgroundColor(
                 getStatusColor(chartRepository.getAvgStatus(isGasLeak = it))
             )
+        }
+
+        chartRepository?.isAirConditionerOn?.observe(lifecycleOwner) {
+            binding.swAirConditioner.isChecked = it
+        }
+
+        chartRepository?.isAutoAirConditioner?.observe(lifecycleOwner) {
+            binding.swAirConditioner.isClickable = !it
         }
     }
 

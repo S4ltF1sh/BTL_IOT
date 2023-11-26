@@ -128,7 +128,63 @@ class CommonSharePreference {
                 ?: Strings.EMPTY
         }
         set(value) {
-            getSharedPreferences()?.edit()?.putString(Key.KEY_FIRE_FIGHTER_PHONE_NUMBER, value)?.apply()
+            getSharedPreferences()?.edit()?.putString(Key.KEY_FIRE_FIGHTER_PHONE_NUMBER, value)
+                ?.apply()
+        }
+
+    var temperatureFireAlert: Float
+        get() {
+            return getSharedPreferences()?.getFloat(
+                Key.KEY_SETTING_TEMPERATURE_FIRE_ALERT,
+                50f
+            )
+                ?: 50f
+        }
+        set(value) {
+            getSharedPreferences()?.edit()?.putFloat(Key.KEY_SETTING_TEMPERATURE_FIRE_ALERT, value)
+                ?.apply()
+        }
+
+    var gasAlert: Float
+        get() {
+            return getSharedPreferences()?.getFloat(
+                Key.KEY_SETTING_GAS_ALERT,
+                50f
+            )
+                ?: 50f
+        }
+        set(value) {
+            getSharedPreferences()?.edit()?.putFloat(Key.KEY_SETTING_GAS_ALERT, value)
+                ?.apply()
+        }
+
+    var temperatureAutoAirConditioner: Float
+        get() {
+            return getSharedPreferences()?.getFloat(
+                Key.KEY_SETTING_TEMPERATURE_AUTO_AIR_CONDITIONER,
+                36f
+            )
+                ?: 36f
+        }
+        set(value) {
+            getSharedPreferences()?.edit()
+                ?.putFloat(Key.KEY_SETTING_TEMPERATURE_AUTO_AIR_CONDITIONER, value)
+                ?.apply()
+        }
+
+    var settingAllowAutoAirConditioner: Boolean
+        get() {
+            return getSharedPreferences()?.getBoolean(
+                Key.KEY_SETTING_ALLOW_AUTO_AIR_CONDITIONER,
+                false
+            )
+                ?: false
+        }
+        set(value) {
+            getSharedPreferences()?.edit()?.putBoolean(
+                Key.KEY_SETTING_ALLOW_AUTO_AIR_CONDITIONER,
+                value
+            )?.apply()
         }
 
     var settingAllowFireAlert: Boolean
@@ -137,7 +193,8 @@ class CommonSharePreference {
                 ?: false
         }
         set(value) {
-            getSharedPreferences()?.edit()?.putBoolean(Key.KEY_SETTING_ALLOW_FIRE_ALERT, value)?.apply()
+            getSharedPreferences()?.edit()?.putBoolean(Key.KEY_SETTING_ALLOW_FIRE_ALERT, value)
+                ?.apply()
         }
 
     var settingAllowPump: Boolean
@@ -164,7 +221,8 @@ class CommonSharePreference {
                 ?: false
         }
         set(value) {
-            getSharedPreferences()?.edit()?.putBoolean(Key.KEY_SETTING_ALLOW_NOTI_SOUND, value)?.apply()
+            getSharedPreferences()?.edit()?.putBoolean(Key.KEY_SETTING_ALLOW_NOTI_SOUND, value)
+                ?.apply()
         }
 
     var settingAllowNotiVibrate: Boolean

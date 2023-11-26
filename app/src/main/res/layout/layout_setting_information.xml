@@ -30,7 +30,29 @@
                 android:drawableStart="@drawable/ic_location"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/color_icon"
+                android:imeOptions="actionDone"
                 android:inputType="" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_temperature_auto_air_conditioner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/temperature_auto_air_conditioner"
+            app:endIconMode="clear_text"
+            app:expandedHintEnabled="true"
+            app:hintAnimationEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_temperature_auto_air_conditioner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_temperature_auto"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/color_icon"
+                android:imeOptions="actionDone"
+                android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -39,6 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:hint="@string/your_phone_number"
+            android:visibility="gone"
             app:endIconMode="clear_text"
             app:expandedHintEnabled="true"
             app:hintAnimationEnabled="true">
@@ -50,6 +73,7 @@
                 android:drawableStart="@drawable/ic_phone"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/color_icon"
+                android:imeOptions="actionDone"
                 android:inputType="phone" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -59,6 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:hint="@string/firefighter_s_phone_number"
+            android:visibility="gone"
             app:endIconMode="clear_text"
             app:expandedHintEnabled="true"
             app:hintAnimationEnabled="true">
@@ -70,7 +95,52 @@
                 android:drawableStart="@drawable/ic_phone"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/color_icon"
+                android:imeOptions="actionDone"
                 android:inputType="phone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_temperature_alert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/temperature_alert"
+            android:visibility="gone"
+            app:endIconMode="clear_text"
+            app:expandedHintEnabled="true"
+            app:hintAnimationEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_temperature_alert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_fire"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/color_icon"
+                android:imeOptions="actionDone"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_gas_alert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/smoke_alert"
+            android:visibility="gone"
+            app:endIconMode="clear_text"
+            app:expandedHintEnabled="true"
+            app:hintAnimationEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_gas_alert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_gas"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/color_icon"
+                android:imeOptions="actionDone"
+                android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button

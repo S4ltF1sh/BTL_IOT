@@ -11,7 +11,11 @@ object Key {
     const val KEY_USER_LOCATION = "key_user_location"
     const val KEY_USER_PHONE_NUMBER = "key_user_phone_number"
     const val KEY_FIRE_FIGHTER_PHONE_NUMBER = "key_fire_fighter_phone_number"
+    const val KEY_SETTING_TEMPERATURE_AUTO_AIR_CONDITIONER = "key_setting_temperature_auto_air_conditioner"
+    const val KEY_SETTING_TEMPERATURE_FIRE_ALERT = "key_setting_temperature_fire_alert"
+    const val KEY_SETTING_GAS_ALERT = "key_setting_gas_alert"
 
+    const val KEY_SETTING_ALLOW_AUTO_AIR_CONDITIONER = "key_setting_allow_auto_air_conditioner"
     const val KEY_SETTING_ALLOW_FIRE_ALERT = "key_setting_allow_fire_alert"
     const val KEY_SETTING_ALLOW_ALERT = "key_setting_allow_alert"
     const val KEY_SETTING_ALLOW_PUMP = "key_setting_allow_pump"

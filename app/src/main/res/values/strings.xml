@@ -37,4 +37,10 @@
     <string name="status">Status</string>
     <string name="_0_0">0.0</string>
     <string name="normal">Normal</string>
+    <string name="smoke">Smoke</string>
+    <string name="auto_air_conditioner">Auto air conditioner</string>
+    <string name="temperature_alert">Temperature alert</string>
+    <string name="smoke_alert">Smoke alert</string>
+    <string name="temperature_auto_air_conditioner">Temperature turn air conditioner on</string>
+    <string name="air_conditioner">Air conditioner</string>
 </resources>
